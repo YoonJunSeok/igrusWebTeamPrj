@@ -1,0 +1,75 @@
+
+.header {
+    height: 50px;
+}
+
+.footer {
+    height: 50px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: Arial;
+
+}
+.pagination {
+    max-width: 800px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px;
+}
+.tableList {
+    position: relative;
+    padding: 10px;
+    border-collapse: collapse;
+}
+.studentTable {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    border: 1px solid;
+    border-collapse: collapse;
+    text-align: center;
+}
+td,
+th {
+    border: 1px solid;
+    padding: 10px;
+}
+
+.pageButton {
+    border: 1px solid black;
+    padding: 5px;
+}
+.clickPageNumber {
+    background-color: lightgrey;
+    padding: 5px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.pagination-block {
+    text-align: center;
+    width: 100%;
+}
+.pagination-block span {
+    display: inline-block;
+}
+.pagination-block .pageButton {
+    background-color: grey;
+    color: white;
+}
+.pagination-block span:hover {
+    cursor: pointer;
+}
+.opacity {
+    opacity: 0.5;
+}
+.outline-none {
+    outline: none;
+    user-select: none;
+}

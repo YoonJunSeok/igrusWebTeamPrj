@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentList</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header"></div>
+    <div class="content">
+        <div class="pagination">
+            <table class="studentTable">
+                <tr>
+                    <td>이름</td>
+                    <td>학번</td>
+                    <td>학과</td>
+                    <td>과목1</td>
+                    <td>과목2</td>
+                    <td>과목3</td>
+                    <td>과목4</td>
+                    <td>과목5</td>
+                    <td>과목6</td>
+                </tr>
+                <tbody class="tableList" id="listingTable">
+                    
+                </tbody>
+            </table>
+            <div class="pagination-block">
+              <span class="pageButton outline-none" id="button_prev">Prev</span>
+              <span id="page_number" class="outline-none"></span>
+              <span class="pageButton outline-none" id="button_next">Next</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+</body>
+
+<script src="upload.js"></script>
+<script src="paging.js"></script>
+</html>
