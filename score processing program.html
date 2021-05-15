@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>성적 관리 프로그램</title>
+        <link rel="stylesheet" href="score.css">
+        <title>2단 레이아웃</title>
+        <script src="save score.js"></script>
+    </head>
+    <body>
+         <div id="main_div">
+            <div id="info">
+            <form id="save processing program form">
+                <h3><a href="#">성적 관리 프로그램</a></h3>        
+            </div>
+            
+            <div id="nav">
+                <u1>
+                <figure>
+                    <figcaption>
+                            <h4><b>학생 정보</b></h4>
+                    </figcaption>
+                <table border = "1">
+                   <tr>
+                       <th>학번</th>
+                       <th>이름</th>
+                       <th>성별</th>
+                       <th>생년월일</th>
+                    
+                    </tr>
+                </table>
+                <figcaption>
+                    <h4><b>성적 등록</b></h4>
+                    <form>
+                        <table>
+                            <tr>
+                                <td><label for = "language">국어</label></td>
+                                <td><input id = "language" type = "text" name = "language"></td>
+                            </tr>
+                            <tr>
+                                <td><label for = "math">수학</label></td>
+                                <td><input id = "math" type = "text" name = "math"></td>
+                            </tr>
+                            <tr>
+                                <td><label for = "english">영어</label></td>
+                                <td><input id = "english" type = "text" name = "english"></td>
+                            </tr>
+                            </table>
+                        <input type="submit" value="저장" onsubmit="showdata()">
+                        <input type="submit" value="수정" onsubmit="showdata()">
+                        <input type = "reset" value = "초기화" onreset="deletedata()">
+                    </form>
+            </figcaption>
+                </figure>
+                </u1>      
+            </div>
+
+            <div id="content">
+                <input type = "button" value = "조회" onselect="showdata()">
+                <input type = "button" value = "삭제" onunload="deletedata()">
+                <input type = "button" value = "전체 삭제" onunload="deletedata()">
+                <table border = "1">
+                    <tr>
+                        <th>학번</th>
+                        <th>이름</th>
+                        <th>국어</th>
+                        <th>영어</th>
+                        <th>수학</th>
+                        <th>총점</th>
+                        <th>평균</th>
+                     </tr>
+                    </div>
+                 </table>
+
+            <div id="footer"></div>
+
+            </div>
+    
+    </body>
+</html>
