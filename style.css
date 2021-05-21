@@ -24,7 +24,6 @@ body {
     padding: 20px;
 }
 .tableList {
-    position: relative;
     padding: 10px;
     border-collapse: collapse;
 }
@@ -37,11 +36,13 @@ body {
     text-align: center;
 }
 td,
-th {
+th, tr {
     border: 1px solid;
     padding: 10px;
 }
-
+.content {
+    position: relative;
+}
 .pageButton {
     border: 1px solid black;
     padding: 5px;
@@ -54,6 +55,9 @@ th {
 }
 .pagination-block {
     text-align: center;
+    position: fixed;
+    left: 0px;
+    top: 850px;
     width: 100%;
 }
 .pagination-block span {
