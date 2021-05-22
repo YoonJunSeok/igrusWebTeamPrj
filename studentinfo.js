@@ -1,14 +1,12 @@
 function store() { // localStorage에 데이터 저장
     var num = document.getElementById('stdNum').value; //학번을 localstorage의 key값으로 저장한다.
     var name = document.getElementById('stdName').value; 
-    var obj = document.getElementById('stdGender').length;
-	/*var gender = "";
+    var gender = "";
 	for (var i=0;i<obj;i++) {
-		if (document.getElementById('stdGender').checked==true){
-			gender+=document.getElementById('stdGender')[idx].value;
+		if (document.getElementsByName('stdGender')[i].checked==true){
+			gender+=document.getElementsByName('stdGender')[i].value;
 		}
-	}*/
-    var gender = document.getElementById('stdGender').value; // 수정해야 됨
+	}
     var date = document.getElementById('stdBirth').value;
     var adress = document.getElementById('stdAdress').value;
     var phone = document.getElementById('stdPhone').value;
