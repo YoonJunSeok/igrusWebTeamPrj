@@ -1,8 +1,3 @@
-window.onload = function(){
-  document.getElementById("showButton").onsubmit = show()
-}
-
-
 function show(){
   // localstorage에서 student arr 가져오기
   studentArr = JSON.parse(localStorage.getItem("students"));
