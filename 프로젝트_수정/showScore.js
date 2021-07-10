@@ -11,7 +11,12 @@ function show(){
   var list = '';
   for(let i=0; i< studentArr.length; i++){
       if (studentArr[i].schoolNum === stdNum) {
-          list += studentArr[i];
+          list += '이름 : '+studentArr[i].name+'\n'
+          + '전공 : '+studentArr[i].major+'\n'
+          + '과목1 : '+studentArr[i].subject1+'\n'
+          + '과목2 : '+studentArr[i].subject2+'\n'
+          + '과목3 : '+studentArr[i].subject3+'\n'
+          + '석차 : '+ '\n\n';
       }
   }
   if (list === ''){
