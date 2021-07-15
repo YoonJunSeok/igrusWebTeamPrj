@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const url = 'mongodb+srv://admin:16team@cluster0.hhvfw.mongodb.net/users?retryWrites=true&w=majority';
+const url = 'SECRET';
 
 mongoose.connect(url, {
     useNewUrlParser: true,
