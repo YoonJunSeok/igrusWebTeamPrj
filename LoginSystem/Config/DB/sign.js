@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const url = 'mongodb+srv://admin:16team@cluster0.hhvfw.mongodb.net/test?retryWrites=true&w=majority';
+const url = 'mongodb+srv://admin:16team@cluster0.hhvfw.mongodb.net/users?retryWrites=true&w=majority';
 
 mongoose.connect(url, {
     useNewUrlParser: true,
@@ -8,10 +8,15 @@ mongoose.connect(url, {
 });
 
 var userSchema = mongoose.Schema({
-    name: {
+    studentNumber: {
         type: String, unique: true
     },
-    password: String
+    name: String,
+    gender: String,
+    birth: Date,
+    phoneNumber: String,
+    address: String,
+    password: String,
 });
 
-module.exports = mongoose.model('users', userSchema);
+module.exports = mongoose.model('info', userSchema);

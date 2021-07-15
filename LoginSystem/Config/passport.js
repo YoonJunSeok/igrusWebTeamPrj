@@ -15,11 +15,11 @@ passport.deserializeUser((user, done) => {
 
 // passport.authenticate 실행 시 실행.
 passport.use( new LocalStrategy({
-        usernameField: 'id',
-        passwordField: 'password',
+        usernameField: 'stdNum',
+        passwordField: 'password'
     },
     (id, password, done) => {
-        userSchema.findOne({name : id, password: password}, (err, result) => {
+        userSchema.findOne({studentNumber : id, password: password}, (err, result) => {
             if(err) {
                 console.log('err :' + err);
                 return done(false, null);
@@ -28,7 +28,7 @@ passport.use( new LocalStrategy({
                 return done(false, null);
             } else {
                 console.log('로그인 성공');
-                return done(null, result.name);
+                return done(null, result.studentNumber);
             }
         })
     })

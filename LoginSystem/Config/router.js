@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     res.render('main');
 });
 
-// 학생등록 = 학생 정보 등록인가?
+// 
 router.get('학생등록', (req, res) => {
     res.render('studentinfo');
 })
@@ -29,42 +29,48 @@ router.get('학생리스트', (req, res) => {
 // login start
 var isAuthenticated = (req, res, next) => {
     if (req.isAuthenticated()) return next();
-    res.redirect('/signInTest');
+    res.redirect('/signIn');
 }
 
-router.get('/signInTest', (req, res) => {
+router.get('/signIn', (req, res) => {
     if (req.user !== undefined)
         res.redirect('/');
     else {
-        res.render('signInTest');
+        res.render('signIn');
     }
 })
 
-router.post('/signInTest', passport.authenticate('local', {failureRedirect: '/signIn', failureFlash: true}),  (req, res) => {
+router.post('/signIn', passport.authenticate('local', { failureRedirect: '/signIn', failureFlash: true }), (req, res) => {
     res.redirect('/');
 });
 
-router.get('/signUpTest', (req, res) => {
-    res.render('signUpTest');
+router.get('/signUp', (req, res) => {
+    res.render('signUp');
 });
 
-router.post('/signUpTest', (req, res) => {
-    const id = req.body.id;
+router.post('/signUp', (req, res) => {
+    const stdNum = req.body.stdNum;
     const pw = req.body.password;
-    userSchema.findOne({name : id}, (err, user) => {
+    const confirmPw = req.body.cofirmPassword;
+    userSchema.findOne({ studentNumber: stdNum }, (err, user) => {
         if (err) console.log(err);
         if (user == null) {
-            var newUser = new userSchema({name : id, password : pw});
-            console.log('newUser : ' + newUser.password);
-            newUser.save((err, result) => {
-                if (err) console.log(err);
-                console.log(result);
-            });
-            res.redirect('/');
+            if (pw == confirmPw) {
+                var newUser = new userSchema({ studentNumber: stdNum, password: pw });
+                newUser.save((err, result) => {
+                    if (err) console.log(err);
+                    console.log(result);
+                });
+                res.redirect('/');
+            }
+            else {
+                console.log('비밀번호가 일치하지 않습니다.');
+                res.redirect('/signUp');
+            }
         }
         else {
-            console.log('이미 존재하는 아이디입니다.')
-            res.redirect('/signUpTest')
+            console.log('이미 존재하는 아이디입니다.');
+            res.redirect('/signUp');
         }
     })
 })
