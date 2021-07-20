@@ -1,10 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const router = require('./Config/router.js');
+const viewRouter = require('./Router/view');
+const signRouter = require('./Router/sign');
+const apiRouter = require('./Router/api');
 const passport = require('passport');
 const flash = require('connect-flash');
 const cookieSession = require('cookie-session');
-const fetch = require('node-fetch');
 
 const app = express();
 
@@ -27,7 +28,9 @@ app.set('views', './views');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
-app.use('/', router);
+app.use('/sign', signRouter);
+app.use('/view', viewRouter);
+app.use('/api', apiRouter);
 
 app.listen(3000, function() {
     console.log('Start!');
