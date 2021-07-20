@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registerPage</title>
+</head>
+<body>
+    <form method="POST" action="/signUp">
+        <!-- 회원가입시에는 학번과 비밀번호만을 사용. -->
+        <div>
+            <span>학번</span>
+            <input type="text" name="stdNum">
+        </div>
+        <div>
+            <span>비밀번호</span>
+            <input type="password" name="password">
+        </div>
+        <div>
+            <span>비밀번호 확인</span>
+            <input type="password" name="cofirmPassword">
+        </div>
+        <div>
+            <input type="submit" value="Register">
+        </div>
+    </form>
+</body>
+</html>
