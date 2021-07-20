@@ -1,11 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-<<<<<<< HEAD
-router.get('/', (req, res) => {
-=======
 router.get('/view', (req, res) => {
->>>>>>> junseok
     res.render('main');
 });
 
