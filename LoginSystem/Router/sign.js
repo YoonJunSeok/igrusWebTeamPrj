@@ -1,32 +1,9 @@
 const express = require('express');
 const crypto = require('crypto');
-const passport = require('./passport.js');
-const userSchema = require('./DB/sign.js');
-
+const passport = require('../Config/passport.js');
+const userSchema = require('../Config/DB/sign.js');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.render('main');
-});
-
-// 
-router.get('학생등록', (req, res) => {
-    res.render('studentinfo');
-})
-
-router.get('성적확인', (req, res) => {
-    res.render('성적확인페이지');
-})
-
-router.get('성적관리', (req, res) => {
-    res.render('성적관리페이지');
-})
-
-router.get('학생리스트', (req, res) => {
-    res.render('studentList');
-})
-
-// login start
 var isAuthenticated = (req, res, next) => {
     if (req.isAuthenticated()) return next();
     res.redirect('/signIn');
@@ -79,9 +56,5 @@ router.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/');
 })
-
-// login end
-
-
 
 module.exports = router;
