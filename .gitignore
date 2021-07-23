@@ -122,6 +122,5 @@ dist
 .pnp.*
 
 # Custom Files
-DB/
-
+Config/
 # End of https://www.toptal.com/developers/gitignore/api/node

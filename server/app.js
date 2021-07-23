@@ -21,16 +21,18 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session()); 
 
-app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', './views');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
-app.use('/sign', signRouter);
-app.use('/view', viewRouter);
-app.use('/api', apiRouter);
+app.use('/', signRouter);
+app.use('/', viewRouter);
+app.use('/', apiRouter);
 
 app.listen(3000, function() {
     console.log('Start!');
