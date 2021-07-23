@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const viewRouter = require('./Router/view');
 const signRouter = require('./Router/sign');
-const apiRouter = require('./Router/api');
 const passport = require('passport');
 const flash = require('connect-flash');
 const cookieSession = require('cookie-session');
@@ -32,7 +31,6 @@ app.set('view engine', 'html');
 
 app.use('/', signRouter);
 app.use('/', viewRouter);
-app.use('/', apiRouter);
 
 app.listen(3000, function() {
     console.log('Start!');
