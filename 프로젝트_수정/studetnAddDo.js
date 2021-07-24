@@ -1,14 +1,13 @@
 window.onload = function(){
     document.getElementById("studentform").onsubmit = addStudent
-    document.getElementById("clearButton").onclick = clearStorage
     document.getElementById("removeButton").onclick = removeStudent
 }
 
 import axios from 'axios';
 
-// db url
+// url
 const config = {
-  url:
+  url: "/studentInfo"
 }
 
 // 함수
@@ -33,7 +32,7 @@ function addStudent() {
   var subject3 = s3.options[s3.selectedIndex].value;
 
   // POST 요청
-  axios.post(`${config.url}/`, {
+  axios.post('/studentInfo', {
       name : name,
       schoolNum : num,
       gender: gender,
@@ -64,7 +63,7 @@ function removeStudent() {
   // 삭제
   axios({
     method: "DELETE",
-    url: ``,
+    url: '/studentInfo',
     params:{
       "schoolNum": stdNum
     }
