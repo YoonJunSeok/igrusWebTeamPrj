@@ -3,7 +3,7 @@ import axios from 'axios';
 function show(){
   // 확인할 학번
   stdNum = document.getElementById("schoolNum").value;
-  const url = ""
+  const url = "/studentInfo"
 
   axios.get(url, {
     params: {stdNum : stdNum}
