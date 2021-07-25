@@ -1,8 +1,19 @@
+import axios from 'axios';
+
 function show(){
-  // localstorage에서 student arr 가져오기
-  studentArr = JSON.parse(localStorage.getItem("students"));
   // 확인할 학번
   stdNum = document.getElementById("schoolNum").value;
+  const url = "/studentInfo"
+
+  axios.get(url, {
+    params: {stdNum : stdNum}
+  })
+  .then((Response)=>{
+    console.log(Response.data);
+    
+}).catch((Error)=>{
+    console.log(Error);
+})
 
   // 확인
   if(stdNum==""){
@@ -17,6 +28,7 @@ function show(){
           + '과목2 : '+studentArr[i].subject2+'\n'
           + '과목3 : '+studentArr[i].subject3+'\n'
           + '석차 : '+ '\n\n';
+
       }
   }
   if (list === ''){

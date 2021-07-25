@@ -121,7 +121,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# Custom Files
-DB/
-
 # End of https://www.toptal.com/developers/gitignore/api/node

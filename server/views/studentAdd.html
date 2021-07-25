@@ -4,12 +4,11 @@
         <meta charset="UTF-8">
         <title>학생 등록 페이지</title>
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="studentinfo.css">
         <script src="studetnAddDo.js"></script>
     </head>
     <body>
         <div id="info">
-        <form id="studentform" >
+        <form id="studentform" action="/studentInfo">
             <h2>학생 정보 등록</h2>
             <div>
             <table border="1" class="table table-bordered">
@@ -81,22 +80,22 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: center;">
-                    <button type="submit" class="btn btn-primary btn-sm">저장</button> <!--학생정보 저장-->
+                    <button type="submit" class="btn btn-primary btn-sm">저장</button>
                     <button type="reset" class="btn btn-primary btn-sm">초기화</button>
                     </td>
                 </tr>
             </table>
             </div>
-          </form>
+        </form>
             <label for="removeKey">정보를 삭제할 학생의 학번을 입력하세요.</label><br>
             <input type="text" id="removeNum" required><br>
-            <input id="removeButton" type="submit" class="btn btn-primary btn-sm" value="삭제"><br><br> <!--선택한 학생 정보 삭제-->
+            <input id="removeButton" type="submit" class="btn btn-primary btn-sm" value="삭제"><br><br>
 
-            <input id="clearButton" type="submit" class="btn btn-primary btn-sm" value="전체삭제"> <!--localstorge에 저장된 모든 데이터 삭제-->
+            <input id="clearButton" type="submit" class="btn btn-primary btn-sm" value="전체삭제"> 
         </div>
         <div>
         <a href="index.html">학생  목록</a> /
-        <a href="">성적  통계</a>
+        <a href="gradeinfo.html">성적  통계</a>
         </div>
     </body>
 </html>

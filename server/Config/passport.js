@@ -1,6 +1,6 @@
 const LocalStrategy = require('passport-local').Strategy;
 const crypto = require('crypto');
-const userSchema = require('./DB/sign.js');
+const studentSchema = require('./DB/sign.js');
 const passport = require('passport');
 
 // 로그인 성공시 사용자 정보를 sesseion에 저장.
@@ -19,7 +19,7 @@ passport.use( new LocalStrategy({
         passwordField: 'password'
     },
     (id, password, done) => {
-        userSchema.findOne({studentNumber : id, password: password}, (err, result) => {
+        studentSchema.findOne({number : id, password: password}, (err, result) => {
             if(err) {
                 console.log('err :' + err);
                 return done(false, null);

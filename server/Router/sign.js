@@ -1,9 +1,10 @@
 const express = require('express');
 const crypto = require('crypto');
-const passport = require('../Config/passport.js');
-const userSchema = require('../Config/DB/sign.js');
+const passport = require('../Config/passport');
+const studentSchema = require('../Config/DB/sign');
 const router = express.Router();
 
+//cookie-session
 var isAuthenticated = (req, res, next) => {
     if (req.isAuthenticated()) return next();
     res.redirect('/signIn');
@@ -29,15 +30,16 @@ router.post('/signUp', (req, res) => {
     const stdNum = req.body.stdNum;
     const pw = req.body.password;
     const confirmPw = req.body.cofirmPassword;
-    userSchema.findOne({ studentNumber: stdNum }, (err, user) => {
+    studentSchema.findOne({ number: stdNum }, (err, user) => {
         if (err) console.log(err);
         if (user == null) {
             if (pw == confirmPw) {
-                var newUser = new userSchema({ studentNumber: stdNum, password: pw });
+                var newUser = new studentSchema({ number: stdNum, password: pw });
                 newUser.save((err, result) => {
                     if (err) console.log(err);
                     console.log(result);
                 });
+
                 res.redirect('/');
             }
             else {
