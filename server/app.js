@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const viewRouter = require('./Router/view');
 const signRouter = require('./Router/sign');
+const apiRouter = require('./Config/API/student');
 const passport = require('passport');
 const flash = require('connect-flash');
 const cookieSession = require('cookie-session');
@@ -21,7 +22,7 @@ app.use(passport.initialize());
 app.use(passport.session()); 
 
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.set('port', process.env.PORT || 3000);
@@ -31,6 +32,7 @@ app.set('view engine', 'html');
 
 app.use('/', signRouter);
 app.use('/', viewRouter);
+app.use('/', apiRouter);
 
 app.listen(3000, function() {
     console.log('Start!');

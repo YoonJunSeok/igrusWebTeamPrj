@@ -1,7 +1,7 @@
 const express = require('express');
 const crypto = require('crypto');
-const passport = require('../Config/passport.js');
-const studentSchema = require('../Config/DB/sign.js');
+const passport = require('../Config/passport');
+const studentSchema = require('../Config/DB/sign');
 const router = express.Router();
 
 //cookie-session
