@@ -11,6 +11,14 @@ router.get('/studentInfo', (req, res) => {
 })
 
 router.post('/studentInfo', (req, res) => {
+    studentSchema.find((err, user) => {
+        if (err) console.log(err);
+        console.log(user);
+        res.send(user);
+    })
+})
+
+router.post('/studentInfo', (req, res) => {
     const studentNumber = req.body.stdNum;
     const studentName = req.body.stdName;
     const studentGender = req.body.stdGender;
@@ -38,7 +46,6 @@ router.post('/studentInfo', (req, res) => {
             // test not yet
             studentSchema.updateOne(user, updateUser, (err, result) => {
                 if (err) console.log(err);
-                console.log(result);
             });
             res.redirect('/');
         }

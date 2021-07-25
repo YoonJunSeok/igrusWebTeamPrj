@@ -3,7 +3,7 @@ const studentSchema = require('../DB/sign');
 
 const router = express.Router();
 
-router.get('/student', (req, res) => {
+router.post('/student', (req, res) => {
     studentSchema.findOne({number: '03'}, (err, user) => {
         const student = {
             'stdNum': user.number,
