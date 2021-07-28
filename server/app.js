@@ -4,6 +4,7 @@ const viewRouter = require('./Router/view');
 const signRouter = require('./Router/sign');
 const apiRouter = require('./Config/API/student');
 const passport = require('passport');
+const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 const cookieSession = require('cookie-session');
 
@@ -24,6 +25,7 @@ app.use(passport.session());
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 app.set('port', process.env.PORT || 3000);
 app.set('views', './views');

@@ -57,6 +57,15 @@ router.get('/showScore', (req, res) => {
     res.render('showScore');
 })
 
+router.get('/score', (req, res) => {
+    const studentNumber = req.body.stdNum;
+    studentSchema.findOne({number: studentNumber}, (err, user) => {
+        if (err) console.log(err);
+        res.send(user);
+    })
+    res.render('showScore');
+})
+
 router.get('studentList', (req, res) => {
     res.render('studentList');
 })
