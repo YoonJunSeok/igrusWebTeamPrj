@@ -22,6 +22,7 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session()); 
 
+app.use("/js", express.static('../js'));
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());

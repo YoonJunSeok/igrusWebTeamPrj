@@ -6,6 +6,10 @@ router.get('/', (req, res) => {
     res.render('main');
 });
 
+router.get('/test', (req, res) => {
+    res.render('testAxios');
+})
+
 router.get('/studentInfo', (req, res) => {
     res.render('studentAdd');
 })
