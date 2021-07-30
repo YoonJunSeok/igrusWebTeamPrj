@@ -4,11 +4,11 @@
         <meta charset="UTF-8">
         <title>학생 등록 페이지</title>
         <link rel="stylesheet" href="css/bootstrap.css">
-        <script src="studetnAddDo.js"></script>
+        <script src="js/studetnAddDo.js"></script>
     </head>
     <body>
         <div id="info">
-        <form id="studentform" action="/studentInfo">
+        <form id="studentform" method="post" action="/studentInfo">
             <h2>학생 정보 등록</h2>
             <div>
             <table border="1" class="table table-bordered">
@@ -94,7 +94,7 @@
             <input id="clearButton" type="submit" class="btn btn-primary btn-sm" value="전체삭제"> 
         </div>
         <div>
-        <a href="index.html">학생  목록</a> /
+        <a href="studentList.html">학생  목록</a> /
         <a href="gradeinfo.html">성적  통계</a>
         </div>
     </body>

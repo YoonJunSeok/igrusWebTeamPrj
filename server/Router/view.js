@@ -6,6 +6,10 @@ router.get('/', (req, res) => {
     res.render('main');
 });
 
+router.get('/test', (req, res) => {
+    res.render('testAxios');
+})
+
 router.get('/studentInfo', (req, res) => {
     res.render('studentAdd');
 })
@@ -54,6 +58,15 @@ router.post('/studentInfo', (req, res) => {
 })
 
 router.get('/showScore', (req, res) => {
+    res.render('showScore');
+})
+
+router.get('/score', (req, res) => {
+    const studentNumber = req.body.stdNum;
+    studentSchema.findOne({number: studentNumber}, (err, user) => {
+        if (err) console.log(err);
+        res.send(user);
+    })
     res.render('showScore');
 })
 

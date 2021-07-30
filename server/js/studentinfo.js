@@ -66,9 +66,10 @@ function removeStudent() {
     data: {
       schoolNum: stdNum
     },
-    withCredentials: true;
+    withCredentials: true
   })
   .then((response) => response.data)
   .catch((error)=>console.log(error));
   
+}
 }
