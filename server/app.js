@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 const cookieSession = require('cookie-session');
 
+const path = require('path');
 const app = express();
 
 app.use(cookieSession({
@@ -21,6 +22,8 @@ app.use(cookieSession({
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session()); 
+
+app.use(express.static(__dirname + '/public'));
 
 app.use("/js", express.static('../js'));
 
