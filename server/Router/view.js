@@ -6,8 +6,17 @@ router.get('/', (req, res) => {
     res.render('main');
 });
 
+// router.get('/test', (req, res) => {
+//     res.render('testAxios');
+// })
+
+// axios test code
+// 이 때 testAxios.html이 안불러와져서 인지 testAxios.js 파일이 실행되지 않는다.
 router.get('/test', (req, res) => {
-    res.render('testAxios');
+    studentSchema.findOne({number: "01"}, (err, user) => {
+        if (err) console.log(err);
+        res.json({user: user.number});
+    });
 })
 
 router.get('/studentInfo', (req, res) => {
