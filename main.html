@@ -1,22 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>메인 페이지</title>
-        <style>
-            h1{
-                text-align: center;
-            }
-            body{
-                text-align: center;
-                font-weight: bold;
+<head>
+<meta charset="UTF-8">
+<title>메인 페이지</title>
+<style>
+h1 {
+	text-align: center;
+	color: darkslategrey;
+}
 
-            }
-        </style>
-    </head>
-    <body>
-        <h1>학생 성적 관리 페이지</h1>
-        <a href="학생등록.html">학생등록</a><br>
-        <a href="성적확인.html">성적확인</a><br>
-        <a href="성적관리.html">성적관리</a>
-    </body>
+
+body {
+	text-align: center;
+	font-weight: bold;
+}
+
+a {
+	border: 1px solid;
+	border-color: black;
+	padding: 0.3em;
+}
+</style>
+</head>
+<body>
+	<h1>학생 성적 관리 페이지</h1>
+<br><br>
+	<button type="button" onclick="location.href='signIn.html'">로그인</button>
+	<button type="button" onclick="location.href='signUp.html'">회원가입</button>
+	<br><br>
+	<a href="studentAdd.html">학생등록</a>
+	<a href="studentList.html">학생목록</a>
+	<a href="showScore.html">성적조회</a>
+	<a href="gradeinfo.html">성적통계</a>
+	<p></p>
+	<div id="ti"></div>
+	<script>
+		function change() {
+			var cur = new Date();
+			document.getElementById("ti").innerHTML = cur;
+
+			setTimeout("change()", 1000);
+		}
+		change();
+	</script>
+
+</body>
 </html>
