@@ -32,7 +32,7 @@ function addStudent() {
   var subject3 = s3.options[s3.selectedIndex].value;
 
   // POST 요청
-  axios.post('/studentInfo', {
+  axios.post('localhost:3000/studentInfo', {
       name : name,
       schoolNum : num,
       gender: gender,
