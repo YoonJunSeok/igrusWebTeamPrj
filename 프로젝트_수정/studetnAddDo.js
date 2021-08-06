@@ -5,11 +5,6 @@ window.onload = function(){
 
 import axios from 'axios';
 
-// url
-const config = {
-  url: "/studentInfo"
-}
-
 // 함수
 
 function addStudent() {
