@@ -11,11 +11,11 @@ router.get('/test', (req, res) => {
 })
 
 // axios test code
-// 이 때 testAxios.html이 안불러와져서 인지 testAxios.js 파일이 실행되지 않는다.
 router.get('/test/api', (req, res) => {
     studentSchema.findOne({number: "01"}, (err, user) => {
         if (err) console.log(err);
-        res.json({user: user.number});
+        res.json(user.number);
+        //res.render('testAxios')
     });
 })
 
